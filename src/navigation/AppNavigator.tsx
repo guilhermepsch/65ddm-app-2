@@ -7,25 +7,28 @@ import AddAdScreen from '../screens/AddAdScreen';
 import DiscordScreen from '../screens/DiscordScreen';
 
 export type RootStackParamList = {
-  Games: undefined;
-  Ads: { gameId: string };
-  AddAd: { gameId: string };
-  Discord: { adId: string };
+	Games: undefined;
+	Ads: { gameId: string };
+	AddAd: { gameId: string };
+	Discord: { adId: string };
 };
 
 const Stack = createStackNavigator<RootStackParamList>();
 
 const AppNavigator = () => {
-  return (
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName="Games">
-        <Stack.Screen name="Games" component={GamesScreen} />
-        <Stack.Screen name="Ads" component={AdsScreen} />
-        <Stack.Screen name="AddAd" component={AddAdScreen} />
-        <Stack.Screen name="Discord" component={DiscordScreen} />
-      </Stack.Navigator>
-    </NavigationContainer>
-  );
+	return (
+		<NavigationContainer>
+			<Stack.Navigator initialRouteName="Games">
+				<Stack.Screen name="Games" component={GamesScreen} />
+				{/* @ts-ignore */}
+				<Stack.Screen name="Ads" component={AdsScreen} />
+				{/* @ts-ignore */}
+				<Stack.Screen name="AddAd" component={AddAdScreen} />
+				{/* @ts-ignore */}
+				<Stack.Screen name="Discord" component={DiscordScreen} />
+			</Stack.Navigator>
+		</NavigationContainer>
+	);
 };
 
 export default AppNavigator;

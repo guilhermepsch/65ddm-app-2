@@ -103,6 +103,7 @@ const AddAdScreen: React.FC<AddAdScreenProps> = ({ route, navigation }) => {
 				placeholderTextColor="#ccc"
 			/>
 			<NumericInput
+        // @ts-ignore
 				value={yearsPlaying}
 				onChangeText={(text: string) =>
 					setYearsPlaying(parseInt(text, 10))
@@ -156,7 +157,7 @@ const AddAdScreen: React.FC<AddAdScreenProps> = ({ route, navigation }) => {
 				<View style={styles.modalContainer}>
 					<View style={styles.modalContent}>
 						<Text style={styles.modalTitle}>Select Week Days</Text>
-						<View style={styles.checkboxContainer}>
+						<View >
 							{[
 								{ name: 'Monday', value: 0 },
 								{ name: 'Tuesday', value: 1 },
